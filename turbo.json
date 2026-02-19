@@ -3,6 +3,9 @@
     "globalDependencies": [
         "**/.env"
     ],
+    "globalPassThroughEnv": [
+        "VITE_API_URL"
+    ],
     "tasks": {
         "build": {
             "dependsOn": [
