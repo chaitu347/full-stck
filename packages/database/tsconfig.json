@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "commonjs",
+        "lib": [
+            "esnext"
+        ],
+        "declaration": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "baseUrl": ".",
+        "esModuleInterop": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
