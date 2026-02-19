@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: api
+    env: node
+    plan: free
+    buildCommand: npm install && npx turbo run build --filter=api
+    startCommand: npm run start -w apps/api
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: 3001
+      - key: DATABASE_URL
+        fromEnvVar: DATABASE_URL
