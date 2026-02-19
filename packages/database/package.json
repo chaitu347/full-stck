@@ -9,9 +9,7 @@
         "build": "prisma generate"
     },
     "dependencies": {
-        "@prisma/client": "^5.10.0"
-    },
-    "devDependencies": {
+        "@prisma/client": "^5.10.0",
         "prisma": "^5.10.0",
         "typescript": "^5.0.0",
         "@types/node": "^20.0.0"
