@@ -12,6 +12,8 @@ function App() {
     const [users, setUsers] = useState<User[]>([])
     const [newUserEmail, setNewUserEmail] = useState('')
     const [newUserName, setNewUserName] = useState('')
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+
 
     useEffect(() => {
         fetchUsers()
@@ -19,8 +21,8 @@ function App() {
 
     const fetchUsers = async () => {
         try {
-            // Using the proxy set in vite.config.ts
-            const response = await axios.get('http://localhost:3001/users')
+            // Using the proxy set in vite.config.ts or the specified API URL
+            const response = await axios.get(`${API_URL}/users`)
             setUsers(response.data)
         } catch (error) {
             console.error('Error fetching users:', error)
@@ -30,7 +32,7 @@ function App() {
     const createUser = async (e: React.FormEvent) => {
         e.preventDefault()
         try {
-            await axios.post('http://localhost:3001/users', {
+            await axios.post(`${API_URL}/users`, {
                 email: newUserEmail,
                 name: newUserName
             })
